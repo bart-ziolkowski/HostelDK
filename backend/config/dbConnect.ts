@@ -10,10 +10,10 @@ const dbConnect = async () => {
   if (process.env.NODE_ENV === "development") {
     DB_URI = process.env.DB_LOCAL_URI!;
   } else if (process.env.NODE_ENV === "production") {
-    DB_URI = process.env.DB_UNI!;
+    DB_URI = process.env.DB_URI!;
   }
 
-    mongoose.connect(DB_URI);
+  mongoose.connect(DB_URI);
 };
 
 export default dbConnect;
