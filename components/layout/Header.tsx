@@ -9,7 +9,7 @@ const Header = () => {
             <a href="/">
               <img
                 style={{ cursor: "pointer" }}
-                src="images/hosteldk_logo.png"
+                src="/images/hosteldk_logo.png"
                 alt="HostelDK"
               />
             </a>
