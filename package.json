@@ -10,12 +10,15 @@
     "seeder": "tsc seeder/seeder.ts --outDir .temp && node .temp/seeder/seeder.js && rmdir /s /q .temp"
   },
   "dependencies": {
+    "bootstrap": "^5.3.3",
     "dotenv": "^16.4.5",
     "mongoose": "^8.3.2",
     "next": "14.2.1",
     "next-connect": "^1.0.0",
     "react": "^18",
-    "react-dom": "^18"
+    "react-dom": "^18",
+    "react-hot-toast": "^2.4.1",
+    "react-star-ratings": "^2.3.0"
   },
   "devDependencies": {
     "@types/node": "^20",
