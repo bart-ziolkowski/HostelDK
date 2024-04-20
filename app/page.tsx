@@ -1,17 +1,23 @@
-import Error from "./error"
+import Error from "./error";
 import Home from "@/components/Home";
 
 export const metadata = {
-  title: 'Home - HotelDK'
-}
+  title: "Home - HotelDK",
+};
 
-const fetchRooms = async () => {
-  const res = await fetch(`${process.env.API_URL}/api/rooms`);
+const fetchRooms = async (searchParams: string) => {
+  const urlParams = new URLSearchParams(searchParams);
+  const queryString = urlParams.toString();
+  const res = await fetch(`${process.env.API_URL}/api/rooms?${queryString}`);
   return res.json();
 };
 
-export default async function HomePage() {
-  const data = await fetchRooms();
+export default async function HomePage({
+  searchParams,
+}: {
+  searchParams: string;
+}) {
+  const data = await fetchRooms(searchParams);
 
   if (data?.message) {
     return <Error error={data} />;
