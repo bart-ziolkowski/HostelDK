@@ -5,7 +5,7 @@ import React, { useState } from "react";
 import ButtonLoader from "../layout/ButtonLoader";
 import Link from "next/link";
 import { signIn } from "next-auth/react";
-import toast from "react-hot-toast";
+import { toast } from "react-hot-toast";
 import { useRouter } from "next/navigation";
 
 const Login = () => {
@@ -26,6 +26,7 @@ const Login = () => {
     });
 
     setLoading(false);
+
     if (result?.error) {
       toast.error(result.error);
     } else {

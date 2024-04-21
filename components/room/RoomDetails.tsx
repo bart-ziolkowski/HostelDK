@@ -1,13 +1,15 @@
 "use client";
 
-import BookingDatePicker from "./BookingDatePicker";
 import { IRoom } from "@/backend/models/room";
+import React, { useEffect } from "react";
+import StarRatings from "react-star-ratings";
+import RoomImageSlider from "./RoomImageSlider";
+import RoomFeatures from "./RoomFeatures";
+import BookingDatePicker from "./BookingDatePicker";
 import ListReviews from "../review/ListReviews";
 import NewReview from "../review/NewReview";
-import React from "react";
-import RoomFeatures from "./RoomFeatures";
-import RoomImageSlider from "./RoomImageSlider";
-import StarRatings from "react-star-ratings";
+import mapboxgl from "mapbox-gl/dist/mapbox-gl.js";
+import "mapbox-gl/dist/mapbox-gl.css";
 
 interface Props {
   data: {
@@ -15,8 +17,28 @@ interface Props {
   };
 }
 
+mapboxgl.accessToken = process.env.MAPBOX_ACCESS_TOKEN;
+
 export const RoomDetails = ({ data }: Props) => {
   const { room } = data;
+
+  useEffect(() => {
+    const setMap = async () => {
+      const coordinates = room?.location?.coordinates;
+
+      const map = new mapboxgl.Map({
+        container: "room-map",
+        style: "mapbox://styles/mapbox/streets-v11",
+        center: coordinates,
+        zoom: 12,
+      });
+
+      new mapboxgl.Marker().setLngLat(coordinates).addTo(map);
+    };
+
+    setMap();
+  }, []);
+
   return (
     <div className="container container-fluid">
       <h2 className="mt-5">{room.name}</h2>
@@ -46,6 +68,17 @@ export const RoomDetails = ({ data }: Props) => {
 
         <div className="col-12 col-md-6 col-lg-4">
           <BookingDatePicker room={room} />
+
+          {room?.location && (
+            <div className="my-5">
+              <h4 className="my2">Room Location:</h4>
+              <div
+                id="room-map"
+                className="shadow rounded"
+                style={{ height: 350, width: "100%" }}
+              ></div>
+            </div>
+          )}
         </div>
       </div>
 

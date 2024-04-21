@@ -56,7 +56,7 @@ const Header = () => {
                         ? user?.avatar?.url
                         : "/images/default_avatar.jpg"
                     }
-                    alt="John Doe"
+                    alt="Username"
                     className="rounded-circle placeholder-glow"
                     height="50"
                     width="50"
