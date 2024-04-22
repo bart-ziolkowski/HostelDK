@@ -63,7 +63,7 @@ export const uploadAvatar = catchAsyncErrors(async (req: NextRequest) => {
   const body = await req.json();
 
   const avatarResponse = await upload_file(body?.avatar, "hosteldk/avatars");
-
+  
   if (req?.user?.avatar?.public_id) {
     await delete_file(req?.user?.avatar?.public_id);
   }
