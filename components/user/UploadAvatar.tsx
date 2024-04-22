@@ -41,10 +41,7 @@ const UploadAvatar = () => {
 
     if (isSuccess) {
       //@ts-ignore
-        updateSession();
-        
-        console.log("kreska");
-
+      updateSession();
       router.refresh();
     }
 

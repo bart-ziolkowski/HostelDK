@@ -37,6 +37,8 @@ export const newRoom = catchAsyncErrors(async (req: NextRequest) => {
 
   const room = await Room.create(body);
 
+  console.log(room);
+
   return NextResponse.json({
     success: true,
     room,

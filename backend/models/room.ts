@@ -50,7 +50,7 @@ const roomSchema: Schema<IRoom> = new Schema({
     type: String,
     required: [true, "Please enter room name"],
     trim: true,
-    maxLength: [200, "Room name cannot exceed 200 characters"],
+    maxLength: [200, "Room name cannot exceed 100 characters"],
   },
   description: {
     type: String,
@@ -58,7 +58,7 @@ const roomSchema: Schema<IRoom> = new Schema({
   },
   pricePerNight: {
     type: Number,
-    required: [true, "Please enter room price"],
+    required: [true, "Please enter room price per night"],
     default: 0.0,
   },
   address: {
@@ -67,7 +67,7 @@ const roomSchema: Schema<IRoom> = new Schema({
   },
   location: {
     type: {
-      String,
+      type: String,
       enum: ["Point"],
     },
     coordinates: {
@@ -143,7 +143,7 @@ const roomSchema: Schema<IRoom> = new Schema({
         ref: "User",
         required: true,
       },
-      ratings: {
+      rating: {
         type: Number,
         required: true,
       },
@@ -165,15 +165,17 @@ const roomSchema: Schema<IRoom> = new Schema({
 });
 
 roomSchema.pre("save", async function (next) {
+  
   const loc = await geoCoder.geocode(this.address);
+
 
   this.location = {
     type: "Point",
     coordinates: [loc[0].longitude, loc[0].latitude],
     formattedAddress: loc[0].formattedAddress,
     city: loc[0].city,
-    state: loc[0].state,
-    zipCode: loc[0].zipCode,
+    state: loc[0].stateCode,
+    zipCode: loc[0].zipcode,
     country: loc[0].countryCode,
   };
 });
