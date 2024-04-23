@@ -1,10 +1,10 @@
 import Booking, { IBooking } from "../models/booking";
 import { NextRequest, NextResponse } from "next/server";
 
-import { catchAsyncErrors } from "../middlewares/catchAsyncErrors";
-import Moment from "moment";
-import { extendMoment } from "moment-range";
 import ErrorHandler from "../utils/errorHandler";
+import Moment from "moment";
+import { catchAsyncErrors } from "../middlewares/catchAsyncErrors";
+import { extendMoment } from "moment-range";
 
 const moment = extendMoment(Moment);
 
@@ -80,7 +80,7 @@ export const getRoomBookedDates = catchAsyncErrors(async (req: NextRequest) => {
   });
 });
 
-export const getMBookings = catchAsyncErrors(async (req: NextRequest) => {
+export const getMyBookings = catchAsyncErrors(async (req: NextRequest) => {
   const bookings = await Booking.find({
     user: req.user._id,
   });
@@ -94,9 +94,9 @@ export const getBookingDetails = catchAsyncErrors(
   async (req: NextRequest, { params }: { params: { id: string } }) => {
     const booking = await Booking.findById({
       user: req.user._id,
-    });
+    }).populate("user room");
 
-    if (booking.user !== req.user._id) {
+    if (booking.user?._id?.toString() !== req.user._id) {
       throw new ErrorHandler("You cannot view this booking", 403);
     }
 
