@@ -1,9 +1,9 @@
-"use client";
+"use client"
 
-import { IBooking } from "@/backend/models/booking";
-import Link from "next/link";
-import { MDBDataTable } from "mdbreact";
 import React from "react";
+import { MDBDataTable } from "mdbreact";
+import Link from "next/link";
+import { IBooking } from "@/backend/models/booking";
 
 interface Props {
   data: {
@@ -11,7 +11,7 @@ interface Props {
   };
 }
 
-const MyBookings = ({ data }: Props) => {
+const MyBookings: React.FC<Props> = ({ data }) => {
   const bookings = data?.bookings;
 
   const setBookings = () => {

@@ -1,15 +1,17 @@
 "use client";
 
-import { IRoom } from "@/backend/models/room";
+import "mapbox-gl/dist/mapbox-gl.css";
+
 import React, { useEffect } from "react";
-import StarRatings from "react-star-ratings";
-import RoomImageSlider from "./RoomImageSlider";
-import RoomFeatures from "./RoomFeatures";
+
 import BookingDatePicker from "./BookingDatePicker";
+import { IRoom } from "@/backend/models/room";
 import ListReviews from "../review/ListReviews";
 import NewReview from "../review/NewReview";
+import RoomFeatures from "./RoomFeatures";
+import RoomImageSlider from "./RoomImageSlider";
+import StarRatings from "react-star-ratings";
 import mapboxgl from "mapbox-gl/dist/mapbox-gl.js";
-import "mapbox-gl/dist/mapbox-gl.css";
 
 interface Props {
   data: {
@@ -36,7 +38,7 @@ export const RoomDetails = ({ data }: Props) => {
       new mapboxgl.Marker().setLngLat(coordinates).addTo(map);
     };
 
-    setMap();
+    if (room?.location) setMap();
   }, []);
 
   return (
@@ -82,9 +84,9 @@ export const RoomDetails = ({ data }: Props) => {
         </div>
       </div>
 
-      <NewReview />
+      <NewReview roomId={room?._id} />
 
-      <ListReviews />
+      <ListReviews reviews={room?.reviews} />
     </div>
   );
 };
