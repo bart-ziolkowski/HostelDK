@@ -1,3 +1,8 @@
+import {
+  authorizeRoles,
+  isAuthenticatedUser,
+} from "@/backend/middlewares/auth";
+
 import { NextRequest } from "next/server";
 import { allRooms } from "@/backend/controllers/roomControllers";
 import { createEdgeRouter } from "next-connect";

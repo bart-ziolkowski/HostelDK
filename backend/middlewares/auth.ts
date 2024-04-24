@@ -1,6 +1,7 @@
 import { NextRequest, NextResponse } from "next/server";
 
 import { IUser } from "../models/user";
+import { Next } from "react-bootstrap/esm/PageItem";
 import { getToken } from "next-auth/jwt";
 
 export const isAuthenticatedUser = async (
@@ -22,4 +23,18 @@ export const isAuthenticatedUser = async (
   req.user = session.user as IUser;
 
   return next();
+};
+
+export const authorizeRoles = (...roles: string[]) => {
+  return (req: NextRequest, event: any, next: any) => {
+    if (!roles.includes(req.user.role)) {
+      return NextResponse.json(
+        {
+          errMessage: `Role (${req.user.role}) is not allowed to access this resource.`,
+        },
+        { status: 403 }
+      );
+    }
+    return next();
+  };
 };

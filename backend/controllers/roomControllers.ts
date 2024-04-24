@@ -1,10 +1,11 @@
 import { NextRequest, NextResponse } from "next/server";
 import Room, { IRoom } from "../models/room";
-import ErrorHandler from "../utils/errorHandler";
-import { catchAsyncErrors } from "../middlewares/catchAsyncErrors";
+
 import APIFilters from "../utils/apiFilters";
-import { IReview } from "../models/room";
 import Booking from "../models/booking";
+import ErrorHandler from "../utils/errorHandler";
+import { IReview } from "../models/room";
+import { catchAsyncErrors } from "../middlewares/catchAsyncErrors";
 
 export const allRooms = catchAsyncErrors(async (req: NextRequest) => {
   const resPerPage: number = 4;
@@ -36,9 +37,9 @@ export const allRooms = catchAsyncErrors(async (req: NextRequest) => {
 export const newRoom = catchAsyncErrors(async (req: NextRequest) => {
   const body = await req.json();
 
-  const room = await Room.create(body);
+  body.user = req.user._id;
 
-  console.log(room);
+  const room = await Room.create(body);
 
   return NextResponse.json({
     success: true,
@@ -149,5 +150,13 @@ export const canReview = catchAsyncErrors(async (req: NextRequest) => {
 
   return NextResponse.json({
     canReview,
+  });
+});
+
+export const allAdminRooms = catchAsyncErrors(async (req: NextRequest) => {
+  const rooms = await Room.find();
+
+  return NextResponse.json({
+    rooms,
   });
 });
