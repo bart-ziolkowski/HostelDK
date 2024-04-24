@@ -105,3 +105,124 @@ export const getBookingDetails = catchAsyncErrors(
     });
   }
 );
+
+const getLastSixMonthsSales = async () => {
+  const lastSixMonthsSales: any = [];
+
+  const currentDate = moment();
+
+  async function fetchSalesForMonth(
+    startDate: moment.Moment,
+    endDate: moment.Moment
+  ) {
+    const result = await Booking.aggregate([
+      {
+        $match: {
+          createdAt: { $gte: startDate.toDate(), $lte: endDate.toDate() },
+        },
+      },
+      {
+        $group: {
+          _id: null,
+          totalSales: { $sum: "$amountPaid" },
+          numOfBookings: { $sum: 1 },
+        },
+      },
+    ]);
+
+    const { totalSales, numOfBookings } =
+      result?.length > 0 ? result[0] : { totalSales: 0, numOfBookings: 0 };
+
+    lastSixMonthsSales.push({
+      monthName: startDate.format("MMMM"),
+      totalSales,
+      numOfBookings,
+    });
+  }
+
+  for (let i = 0; i < 6; i++) {
+    const startDate = moment(currentDate).startOf("month");
+    const endDate = moment(currentDate).endOf("month");
+
+    await fetchSalesForMonth(startDate, endDate);
+
+    currentDate.subtract(1, "months");
+  }
+
+  return lastSixMonthsSales;
+};
+
+const getTopPerformingRooms = async (startDate: Date, endDate: Date) => {
+  const topRooms = await Booking.aggregate([
+    {
+      $match: {
+        createdAt: { $gte: startDate, $lte: endDate },
+      },
+    },
+    {
+      $group: {
+        _id: "$room",
+        bookingsCount: { $sum: 1 },
+      },
+    },
+    {
+      $sort: {
+        bookingsCount: -1,
+      },
+    },
+    {
+      $limit: 3,
+    },
+    {
+      $lookup: {
+        from: "rooms",
+        localField: "_id",
+        foreignField: "_id",
+        as: "roomData",
+      },
+    },
+    {
+      $unwind: "$roomData",
+    },
+    {
+      $project: {
+        _id: 0,
+        roomName: "$roomData.name",
+        bookingsCount: 1,
+      },
+    },
+  ]);
+
+  return topRooms;
+};
+
+export const getSalesStats = catchAsyncErrors(
+  async (req: NextRequest, { params }: { params: { id: string } }) => {
+    const { searchParams } = new URL(req.url);
+
+    const startDate = new Date(searchParams.get("startDate") as string);
+    const endDate = new Date(searchParams.get("endDate") as string);
+    startDate.setHours(0, 0, 0, 0);
+    endDate.setHours(23, 59, 59, 999);
+
+    const bookings = await Booking.find({
+      createdAt: { $gte: startDate, $lte: endDate },
+    });
+
+    const numberOfBookings = bookings.length;
+    const totalSales = bookings.reduce(
+      (acc, booking) => acc + booking.amountPaid,
+      0
+    );
+
+    const sixMonthsSalesData = await getLastSixMonthsSales();
+    const topRooms = await getTopPerformingRooms(startDate, endDate);
+
+    return NextResponse.json({
+      numberOfBookings,
+      totalSales,
+      sixMonthsSalesData,
+      topRooms,
+    });
+  }
+);
