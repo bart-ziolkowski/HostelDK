@@ -96,12 +96,25 @@ export const getBookingDetails = catchAsyncErrors(
       user: req.user._id,
     }).populate("user room");
 
-    if (booking.user?._id?.toString() !== req.user._id) {
+    if (
+      booking.user?._id?.toString() !== req.user._id &&
+      req?.user?.role !== "admin"
+    ) {
       throw new ErrorHandler("You cannot view this booking", 403);
     }
 
     return NextResponse.json({
       booking,
+    });
+  }
+);
+
+export const getAllAdminBookings = catchAsyncErrors(
+  async (req: NextRequest) => {
+    const bookings = await Booking.find();
+
+    return NextResponse.json({
+      bookings,
     });
   }
 );
@@ -223,6 +236,22 @@ export const getSalesStats = catchAsyncErrors(
       totalSales,
       sixMonthsSalesData,
       topRooms,
+    });
+  }
+);
+
+export const deleteBooking = catchAsyncErrors(
+  async (req: NextRequest, { params }: { params: { id: string } }) => {
+    const booking = await Booking.findById(params.id);
+
+    if (!booking) {
+      throw new ErrorHandler("Booking not found with this ID", 404);
+    }
+
+    await booking?.deleteOne();
+
+    return NextResponse.json({
+      success: true,
     });
   }
 );

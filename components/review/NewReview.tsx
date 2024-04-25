@@ -1,11 +1,13 @@
+import React, { useEffect, useState } from "react";
 import {
   useCanUserReviewQuery,
   usePostReviewMutation,
 } from "@/redux/api/roomApi";
-import { useRouter } from "next/navigation";
-import React, { useEffect, useState } from "react";
-import toast from "react-hot-toast";
+
 import StarRatings from "react-star-ratings";
+import { revalidateTag } from "@/helpers/revalidate";
+import toast from "react-hot-toast";
+import { useRouter } from "next/navigation";
 
 const NewReview = ({ roomId }: { roomId: string }) => {
   const [rating, setRating] = useState(0);
@@ -23,6 +25,7 @@ const NewReview = ({ roomId }: { roomId: string }) => {
     }
 
     if (isSuccess) {
+      revalidateTag("RoomDetails");
       toast.success("Review posted");
       router.refresh();
     }

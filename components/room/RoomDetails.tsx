@@ -55,7 +55,7 @@ export const RoomDetails = ({ data }: Props) => {
           starSpacing="1px"
           name="rating"
         />
-        <span className="no-of-reviews">({room?.numOfBeds} Reviews)</span>
+        <span className="no-of-reviews">({room?.reviews.length} Reviews)</span>
       </div>
 
       <RoomImageSlider images={room?.images} />
