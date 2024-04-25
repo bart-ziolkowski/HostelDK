@@ -63,7 +63,7 @@ export const uploadAvatar = catchAsyncErrors(async (req: NextRequest) => {
   const body = await req.json();
 
   const avatarResponse = await upload_file(body?.avatar, "hosteldk/avatars");
-  
+
   if (req?.user?.avatar?.public_id) {
     await delete_file(req?.user?.avatar?.public_id);
   }
@@ -153,3 +153,63 @@ export const forgotPassword = catchAsyncErrors(async (req: NextRequest) => {
     user,
   });
 });
+
+export const getAllUsersAdmin = catchAsyncErrors(async (req: NextRequest) => {
+  const users = await User.find();
+
+  return NextResponse.json({
+    users,
+  });
+});
+
+export const getUserDetails = catchAsyncErrors(
+  async (req: NextRequest, { params }: { params: { id: string } }) => {
+    const user = await User.findById(params.id);
+
+    if (!user) {
+      throw new ErrorHandler("User not found with this ID", 404);
+    }
+
+    return NextResponse.json({
+      user,
+    });
+  }
+);
+
+export const updateUser = catchAsyncErrors(
+  async (req: NextRequest, { params }: { params: { id: string } }) => {
+    const body = await req.json();
+
+    const newUserData = {
+      name: body.name,
+      email: body.email,
+      role: body.role,
+    };
+
+    const user = await User.findByIdAndUpdate(params.id, newUserData);
+
+    return NextResponse.json({
+      user,
+    });
+  }
+);
+
+export const deleteUser = catchAsyncErrors(
+  async (req: NextRequest, { params }: { params: { id: string } }) => {
+    const user = await User.findById(params.id);
+
+    if (!user) {
+      throw new ErrorHandler("User not found with this ID", 404);
+    }
+
+    if (user?.avatar?.public_id) {
+      await delete_file(user?.avatar?.public_id);
+    }
+
+    await user.deleteOne();
+
+    return NextResponse.json({
+      success: true,
+    });
+  }
+);

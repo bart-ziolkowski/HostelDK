@@ -1,5 +1,4 @@
-import mongoose, { Document, Schema } from "mongoose";
-
+import mongoose, { Schema, Document } from "mongoose";
 import geoCoder from "../utils/geoCoder";
 import { IUser } from "./user";
 
@@ -157,7 +156,7 @@ const roomSchema: Schema<IRoom> = new Schema({
   user: {
     type: mongoose.Schema.Types.ObjectId,
     ref: "User",
-    required: true,
+    required: false,
   },
   createdAt: {
     type: Date,
