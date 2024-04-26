@@ -1,9 +1,8 @@
 "use client";
 
-import { useRouter, useSearchParams } from "next/navigation";
-
+import React from "react";
 import Pagination from "react-js-pagination";
-import React from "react-js-pagination";
+import { useSearchParams, useRouter } from "next/navigation";
 
 interface Props {
   resPerPage: number;
@@ -34,7 +33,7 @@ const CustomPagination = ({ resPerPage, filteredRoomsCount }: Props) => {
   };
   return (
     <div>
-      {resPerPage < filteredRoomsCount ?? (
+      {resPerPage < filteredRoomsCount && (
         <div className="d-flex justify-content-center mt-5">
           <Pagination
             activePage={page}

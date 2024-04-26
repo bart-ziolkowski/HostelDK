@@ -52,7 +52,7 @@ export const bookingApi = createApi({
     deleteBooking: builder.mutation({
       query(id) {
         return {
-          url: `/admin/bookings${id}`,
+          url: `/admin/bookings/${id}`,
           method: "DELETE",
         };
       },

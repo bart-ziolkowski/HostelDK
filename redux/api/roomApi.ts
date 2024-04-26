@@ -17,7 +17,7 @@ export const roomApi = createApi({
     canUserReview: builder.query({
       query(id) {
         return {
-          url: `/reviews/can_review?roomId${id}`,
+          url: `/reviews/can_review?roomId=${id}`,
         };
       },
     }),
@@ -68,7 +68,7 @@ export const roomApi = createApi({
     getRoomReviews: builder.query({
       query(id) {
         return {
-          url: `/admin/rooms/reviews?roomId${id}`,
+          url: `/admin/rooms/reviews?roomId=${id}`,
         };
       },
       providesTags: ["Reviews"],

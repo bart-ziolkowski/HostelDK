@@ -6,7 +6,7 @@ import {
 
 import StarRatings from "react-star-ratings";
 import { revalidateTag } from "@/helpers/revalidate";
-import toast from "react-hot-toast";
+import { toast } from "react-hot-toast";
 import { useRouter } from "next/navigation";
 
 const NewReview = ({ roomId }: { roomId: string }) => {
@@ -16,7 +16,6 @@ const NewReview = ({ roomId }: { roomId: string }) => {
   const router = useRouter();
 
   const { data: { canReview } = {} } = useCanUserReviewQuery(roomId);
-
   const [postReview, { error, isSuccess }] = usePostReviewMutation();
 
   useEffect(() => {
@@ -75,23 +74,19 @@ const NewReview = ({ roomId }: { roomId: string }) => {
               ></button>
             </div>
             <div className="modal-body">
-              <p>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla
-                consectetur, mi nec tristique vehicula, elit tellus vulputate
-                ex, nec bibendum libero elit at orci.
-              </p>
               <StarRatings
                 rating={rating}
-                starRatedColor="#326647"
+                starRatedColor="#e61e4d"
                 numberOfStars={5}
                 name="rating"
                 changeRating={(e: any) => setRating(e)}
               />
+
               <div className="form-floating">
                 <textarea
                   id="review_field"
-                  placeholder="Leave your review..."
                   className="form-control mt-4"
+                  placeholder="Leave your review"
                   style={{ height: "100px" }}
                   value={comment}
                   onChange={(e) => setComment(e.target.value)}

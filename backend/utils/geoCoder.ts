@@ -1,10 +1,10 @@
 const NodeGeocoder = require("node-geocoder");
 
 const options = {
+  fetch: async () => (await import("node-fetch")).default,
   provider: process.env.GEOCODER_PROVIDER,
   apiKey: process.env.GEOCODER_API_KEY,
   formatter: null,
-  httpAdapter: "https",
 };
 
 const geoCoder = NodeGeocoder(options);

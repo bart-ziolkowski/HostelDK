@@ -7,7 +7,6 @@ import APIFilters from "../utils/apiFilters";
 import Booking from "../models/booking";
 import ErrorHandler from "../utils/errorHandler";
 import { catchAsyncErrors } from "../middlewares/catchAsyncErrors";
-import geoCoder from "../utils/geoCoder";
 
 export const allRooms = catchAsyncErrors(async (req: NextRequest) => {
   const resPerPage: number = 4;
@@ -15,7 +14,6 @@ export const allRooms = catchAsyncErrors(async (req: NextRequest) => {
   const { searchParams } = new URL(req.url);
 
   const queryStr: any = {};
-
   searchParams.forEach((value, key) => {
     queryStr[key] = value;
   });
@@ -94,7 +92,7 @@ export const uploadRoomImages = catchAsyncErrors(
     }
 
     const uploader = async (image: string) =>
-      upload_file(image, "hosteldk/rooms");
+      upload_file(image, "bookit/rooms");
 
     const urls = await Promise.all((body?.images).map(uploader));
 

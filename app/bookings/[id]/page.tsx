@@ -1,9 +1,9 @@
-import BookingDetails from "@/components/booking/BookingDetails";
 import Error from "@/app/error";
+import BookingDetails from "@/components/booking/BookingDetails";
 import { getAuthHeader } from "@/helpers/authHeader";
 
 export const metadata = {
-  title: "My Booking Details",
+  title: "My Bookings Details",
 };
 
 const getBooking = async (id: string) => {
@@ -13,11 +13,10 @@ const getBooking = async (id: string) => {
     `${process.env.API_URL}/api/bookings/${id}`,
     authHeader
   );
-
   return res.json();
 };
 
-export default async function BookingDetailsPage({
+export default async function MyBookingsPage({
   params,
 }: {
   params: { id: string };

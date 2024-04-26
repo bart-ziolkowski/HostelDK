@@ -1,11 +1,12 @@
 import { NextRequest, NextResponse } from "next/server";
-import User from "../models/user";
-import Booking from "../models/booking";
-import Room from "../models/room";
 import { catchAsyncErrors } from "../middlewares/catchAsyncErrors";
+import Room from "../models/room";
+import User from "../models/user";
 import { headers } from "next/headers";
+import Booking from "../models/booking";
 
 const stripe = require("stripe")(process.env.STRIPE_SECRET_KEY);
+
 
 export const stripeCheckoutSession = catchAsyncErrors(
   async (req: NextRequest, { params }: { params: { id: string } }) => {
