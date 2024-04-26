@@ -1,5 +1,5 @@
 import moment from "moment";
-
+import { NextRequest } from "next/server";
 export const calculateDaysOfStay = (checkInDate: Date, checkOutDate: Date) => {
   const startDate = moment(checkInDate);
   const endDate = moment(checkOutDate);
@@ -15,3 +15,5 @@ export const addCommasToAmount = (amount: string) => {
 
   return parts.join(".");
 };
+
+

@@ -1,10 +1,10 @@
 export const rooms = [
   {
-    name: "Charming Studio < 10 Miles to Wells' Beaches!",
+    name: "The Sapphire Suite",
     pricePerNight: 168,
     description:
-      "A friendly atmosphere and natural delights await your visit to the town of Wells! Stay at this well-equipped 1-bath studio and enjoy easy access to several beaches, including Wells Beach and Drakes Island Beach, as well as Rachel Carson National Wildlife Refuge - the best spot for wildlife viewing just 8 miles away. Not to mention, with the downtown area just 10 minutes from vacation rental.",
-    address: "4667 Bicetown Street, New York, NY, 10004",
+      "Indulge in the opulence of our Sapphire Suite, where luxury meets comfort. This room features a king-sized bed, a state-of-the-art entertainment system, and a private balcony with breathtaking views.",
+    address: "Terpvej 21, 6630  Øster Lindet  Vejen, Denmark",
     guestCapacity: 1,
     numOfBeds: 1,
     isInternet: true,
@@ -16,23 +16,23 @@ export const rooms = [
     numOfReviews: 0,
     images: [
       {
-        public_id: "bookit/demo/ny4n2w1ubdnfktua8stg",
-        url: "http://res.cloudinary.com/udemy-courses/image/upload/v1693135931/bookit/demo/ny4n2w1ubdnfktua8stg.jpg",
+        public_id: "hosteldk/mock/qgssfkp2gmza8d3keqr2.jpg",
+        url: "https://res.cloudinary.com/dv7nhvy8e/image/upload/v1714133212/hosteldk/mock/qgssfkp2gmza8d3keqr2.jpg",
       },
       {
-        public_id: "bookit/demo/ao7enhxobr0z1qyxgyki",
-        url: "http://res.cloudinary.com/udemy-courses/image/upload/v1693135931/bookit/demo/ao7enhxobr0z1qyxgyki.jpg",
+        public_id: "hosteldk/mock/cbyg5dztud4z8gvxeed7.jpg",
+        url: "https://res.cloudinary.com/dv7nhvy8e/image/upload/v1714133211/hosteldk/mock/cbyg5dztud4z8gvxeed7.jpg",
       },
     ],
     category: "King",
     reviews: [],
   },
   {
-    name: "Picturesque 2-Story Farmhouse w/Private Hot Tub",
+    name: "The Tranquility Twin",
     pricePerNight: 242,
     description:
-      "Find plenty of space for a family or a large group at this picturesque Wells home, the perfect spot for a relaxing getaway in charming, quintessential Maine style! Spend your days on the beautiful nearby beaches, and come home to a large backyard and orchard where your kids can play, as well as a patio with a gas grill for barbecues on summer afternoons.",
-    address: "200 Olympic Dr, Stafford, VS, 22554",
+      "Designed for relaxation, the Tranquility Twin offers two plush twin beds, soothing decor, and a serene atmosphere, perfect for unwinding after a day of adventure.",
+    address: "Nørreballevej 5, 5900  Tryggelev  Langeland, Denmark",
     guestCapacity: 2,
     numOfBeds: 2,
     isInternet: true,
@@ -44,23 +44,23 @@ export const rooms = [
     numOfReviews: 0,
     images: [
       {
-        public_id: "bookit/demo/gbabqnb7nzvc7gmmpcvg",
-        url: "http://res.cloudinary.com/udemy-courses/image/upload/v1693136060/bookit/demo/gbabqnb7nzvc7gmmpcvg.jpg",
+        public_id: "hosteldk/mock/rzfyup3x1gwnwke33zxl.jpg",
+        url: "https://res.cloudinary.com/dv7nhvy8e/image/upload/v1714133211/hosteldk/mock/rzfyup3x1gwnwke33zxl.jpg",
       },
       {
-        public_id: "bookit/demo/tvheutup1idr5wi0p5bq",
-        url: "http://res.cloudinary.com/udemy-courses/image/upload/v1694680598/bookit/demo/tvheutup1idr5wi0p5bq.jpg",
+        public_id: "hosteldk/mock/edwkz4yp0pvcpa233p9h.jpg",
+        url: "https://res.cloudinary.com/dv7nhvy8e/image/upload/v1714133211/hosteldk/mock/edwkz4yp0pvcpa233p9h.jpg",
       },
     ],
     category: "Twins",
     reviews: [],
   },
   {
-    name: "Downtown Portsmouth Private Getaway! Hot Tub",
+    name: "The Vintage Veranda",
     pricePerNight: 85,
     description:
-      "Absolutely the best location in Portsmouth! Beautifully furnished, this spacious and private home is perfectly suited for taking in all of the must-see sights and historic landmarks that make this vibrant city so unique. Situated near the banks of the Piscataqua River just minutes away from Strawbery Banke Museum, Prescott Park, USS Albacore Museum, Market Square and more!",
-    address: "3747 Parkway Street, Apple Valley, CA, 92307",
+      "Step back in time with the Vintage Veranda room, boasting antique furnishings, a claw-foot tub, and a cozy veranda to enjoy your morning coffee.",
+    address: "Skovmarksvej 14, 4100  Vetterslev  Ringsted, Denmark",
     guestCapacity: 3,
     numOfBeds: 2,
     isInternet: true,
@@ -72,24 +72,24 @@ export const rooms = [
     numOfReviews: 0,
     images: [
       {
-        public_id: "bookit/demo/nhhthdrrvaundinfnyxd",
-        url: "http://res.cloudinary.com/udemy-courses/image/upload/v1693136187/bookit/demo/nhhthdrrvaundinfnyxd.jpg",
+        public_id: "hosteldk/mock/cbyg5dztud4z8gvxeed7.jpg",
+        url: "https://res.cloudinary.com/dv7nhvy8e/image/upload/v1714133211/hosteldk/mock/cbyg5dztud4z8gvxeed7.jpg",
       },
       {
-        public_id: "bookit/demo/qsmprvvkshpwynqinz8i",
-        url: "http://res.cloudinary.com/udemy-courses/image/upload/v1693136187/bookit/demo/qsmprvvkshpwynqinz8i.jpg",
+        public_id: "hosteldk/mock/qgssfkp2gmza8d3keqr2.jpg",
+        url: "https://res.cloudinary.com/dv7nhvy8e/image/upload/v1714133212/hosteldk/mock/qgssfkp2gmza8d3keqr2.jpg",
       },
     ],
     category: "King",
     reviews: [],
   },
   {
-    name: "Spacious Suite in a quiet Boston neighborhood.",
+    name: "The Executive Escape",
     pricePerNight: 95,
     description:
-      "Our largest room with a queen bed and foldable sofa. Comfortably fits 2-3 adults, four adults maximum. Decorated with Irish-themed colors and arts. It has a private bathroom with a shower, equipped with smart TV, mini-fridge, desk, chairs. Enjoy City views at the sitting area by the window. Located on the 3rd floor with no elevator.",
-    address: "224 Cherry St, Buffalo, NY, 14202",
-    guestCapacity: 6,
+      "Tailored for the business traveler, the Executive Escape provides a spacious work desk, high-speed internet, and an ergonomic chair to ensure productivity and comfort.",
+    address: "Gartnervænget 4, 7752  Snedsted  Thisted, Denmark",
+    guestCapacity: 5,
     numOfBeds: 3,
     isInternet: true,
     isBreakfast: true,
@@ -100,27 +100,27 @@ export const rooms = [
     numOfReviews: 0,
     images: [
       {
-        public_id: "bookit/demo/ahxbixikavvrlokgf8jp",
-        url: "http://res.cloudinary.com/udemy-courses/image/upload/v1693136394/bookit/demo/ahxbixikavvrlokgf8jp.jpg",
+        public_id: "hosteldk/mock/up4razicjmlpyoc0zfjh.jpg",
+        url: "https://res.cloudinary.com/dv7nhvy8e/image/upload/v1714133211/hosteldk/mock/up4razicjmlpyoc0zfjh.jpg",
       },
       {
-        public_id: "bookit/demo/m7hgvpqj6kbqjsma0gfy",
-        url: "http://res.cloudinary.com/udemy-courses/image/upload/v1693136394/bookit/demo/m7hgvpqj6kbqjsma0gfy.jpg",
+        public_id: "hosteldk/mock/qgssfkp2gmza8d3keqr2.jpg",
+        url: "https://res.cloudinary.com/dv7nhvy8e/image/upload/v1714133212/hosteldk/mock/qgssfkp2gmza8d3keqr2.jpg",
       },
       {
-        public_id: "bookit/demo/inpn3k94tvsmdaun0dsj",
-        url: "http://res.cloudinary.com/udemy-courses/image/upload/v1693136394/bookit/demo/inpn3k94tvsmdaun0dsj.jpg",
+        public_id: "hosteldk/mock/mntbfiwgridfhghhhifl.jpg",
+        url: "https://res.cloudinary.com/dv7nhvy8e/image/upload/v1714133211/hosteldk/mock/mntbfiwgridfhghhhifl.jpg",
       },
     ],
     category: "Single",
     reviews: [],
   },
   {
-    name: "Shangri-La Hotel, Washington",
+    name: "The Romantic Retreat",
     pricePerNight: 105,
     description:
-      "Our largest room with a queen bed and foldable sofa. Comfortably fits 2-3 adults, four adults maximum. Decorated with Irish-themed colors and arts. It has a private bathroom with a shower, equipped with smart TV, mini-fridge, desk, chairs. Enjoy City views at the sitting area by the window. Located on the 3rd floor with no elevator.",
-    address: "4724  Mudlick Road, Yakima, WA, 98902",
+      "Celebrate love in our Romantic Retreat, featuring a four-poster bed, soft lighting, and a luxurious jacuzzi tub for two.",
+    address: "Bjergsnæs Mose 13, 8800  Søndermark  Viborg, Denmark",
     guestCapacity: 2,
     numOfBeds: 1,
     isInternet: true,
@@ -132,23 +132,23 @@ export const rooms = [
     numOfReviews: 0,
     images: [
       {
-        public_id: "bookit/demo/ir1705u1vtfgzvqqdfh2",
-        url: "http://res.cloudinary.com/udemy-courses/image/upload/v1693136765/bookit/demo/ir1705u1vtfgzvqqdfh2.jpg",
+        public_id: "hosteldk/mock/qzpy9qcfyojbbksfuchs.jpg",
+        url: "https://res.cloudinary.com/dv7nhvy8e/image/upload/v1714133211/hosteldk/mock/qzpy9qcfyojbbksfuchs.jpg",
       },
       {
-        public_id: "bookit/demo/o3ieyr8gltwhwccgqzia",
-        url: "http://res.cloudinary.com/udemy-courses/image/upload/v1693136765/bookit/demo/o3ieyr8gltwhwccgqzia.jpg",
+        public_id: "hosteldk/mock/edwkz4yp0pvcpa233p9h.jpg",
+        url: "https://res.cloudinary.com/dv7nhvy8e/image/upload/v1714133211/hosteldk/mock/edwkz4yp0pvcpa233p9h.jpg",
       },
     ],
     category: "King",
     reviews: [],
   },
   {
-    name: "Hotel Chimayo de Santa Fe Rooms",
+    name: "The Garden Getaway",
     pricePerNight: 36,
     description:
-      "Our largest room with a queen bed and foldable sofa. Comfortably fits 2-3 adults, four adults maximum. Decorated with Irish-themed colors and arts. It has a private bathroom with a shower, equipped with smart TV, mini-fridge, desk, chairs. Enjoy City views at the sitting area by the window. Located on the 3rd floor with no elevator.",
-    address: "1029  Godfrey Street, Portland, OR, 97205",
+      "Surrounded by greenery, the Garden Getaway offers a peaceful respite with its own private garden, a comfortable daybed, and nature-inspired decor.",
+    address: "Kornskyldvej 31, 2300  Sundbyvester  Copenhagen, Denmark",
     guestCapacity: 2,
     numOfBeds: 2,
     isInternet: true,
@@ -160,19 +160,19 @@ export const rooms = [
     numOfReviews: 0,
     images: [
       {
-        public_id: "bookit/demo/hmvqt42lzdjc197ynrtk",
-        url: "http://res.cloudinary.com/udemy-courses/image/upload/v1693136789/bookit/demo/hmvqt42lzdjc197ynrtk.jpg",
+        public_id: "hosteldk/mock/mntbfiwgridfhghhhifl.jpg",
+        url: "https://res.cloudinary.com/dv7nhvy8e/image/upload/v1714133211/hosteldk/mock/mntbfiwgridfhghhhifl.jpg",
       },
     ],
     category: "Twins",
     reviews: [],
   },
   {
-    name: "Hotel Garni Ischgl 4 star room comfort",
+    name: "The Seaside Sanctuary",
     pricePerNight: 82,
     description:
-      "Our largest room with a queen bed and foldable sofa. Comfortably fits 2-3 adults, four adults maximum. Decorated with Irish-themed colors and arts. It has a private bathroom with a shower, equipped with smart TV, mini-fridge, desk, chairs. Enjoy City views at the sitting area by the window. Located on the 3rd floor with no elevator.",
-    address: "2645  Parrish Avenue, SAINT LOUIS, MO, 63116",
+      "Wake up to the sound of waves in the Seaside Sanctuary, where each room faces the sea and comes with a private terrace to soak in the sunsets.",
+    address: "Tesdorpfsvej 13, 2000  Godthåb  Frederiksberg, Denmark",
     guestCapacity: 5,
     numOfBeds: 3,
     isInternet: true,
@@ -184,19 +184,19 @@ export const rooms = [
     numOfReviews: 0,
     images: [
       {
-        public_id: "bookit/demo/aenyd4econmkcvyiyjkc",
-        url: "http://res.cloudinary.com/udemy-courses/image/upload/v1693136804/bookit/demo/aenyd4econmkcvyiyjkc.jpg",
+        public_id: "hosteldk/mock/edwkz4yp0pvcpa233p9h.jpg",
+        url: "https://res.cloudinary.com/dv7nhvy8e/image/upload/v1714133211/hosteldk/mock/edwkz4yp0pvcpa233p9h.jpg",
       },
     ],
     category: "Single",
     reviews: [],
   },
   {
-    name: "The Spa at Base Camp at Kerry Hotel",
+    name: "The Artist’s Atelier",
     pricePerNight: 76,
     description:
-      "Our largest room with a queen bed and foldable sofa. Comfortably fits 2-3 adults, four adults maximum. Decorated with Irish-themed colors and arts. It has a private bathroom with a shower, equipped with smart TV, mini-fridge, desk, chairs. Enjoy City views at the sitting area by the window. Located on the 3rd floor with no elevator.",
-    address: "3118  Red Hawk Road, Garfield, MN, 56332",
+      "A haven for creatives, the Artist’s Atelier is adorned with inspiring art, offers ample natural light, and includes an easel for those who wish to paint.",
+    address: "Voldmestergade 8, 2100  Indre By  Copenhagen, Denmark",
     guestCapacity: 2,
     numOfBeds: 1,
     isInternet: true,
@@ -208,12 +208,12 @@ export const rooms = [
     numOfReviews: 0,
     images: [
       {
-        public_id: "bookit/demo/bwrnbs3sqzd6bbuyau47",
-        url: "http://res.cloudinary.com/udemy-courses/image/upload/v1693136823/bookit/demo/bwrnbs3sqzd6bbuyau47.jpg",
+        public_id: "hosteldk/mock/qgssfkp2gmza8d3keqr2.jpg",
+        url: "https://res.cloudinary.com/dv7nhvy8e/image/upload/v1714133212/hosteldk/mock/qgssfkp2gmza8d3keqr2.jpg",
       },
       {
-        public_id: "bookit/demo/hhjpp67jiqyacv8gvmso",
-        url: "http://res.cloudinary.com/udemy-courses/image/upload/v1693136822/bookit/demo/hhjpp67jiqyacv8gvmso.jpg",
+        public_id: "hosteldk/mock/qgssfkp2gmza8d3keqr2.jpg",
+        url: "https://res.cloudinary.com/dv7nhvy8e/image/upload/v1714133212/hosteldk/mock/qgssfkp2gmza8d3keqr2.jpg",
       },
     ],
     category: "Single",

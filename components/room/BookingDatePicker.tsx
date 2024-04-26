@@ -5,7 +5,7 @@ import { calculateDaysOfStay } from "@/helpers/helpers";
 import {
   useGetBookedDatesQuery,
   useLazyCheckBookingAvailabilityQuery,
-  useLazyStripeCheckoutQuery
+  useLazyStripeCheckoutQuery,
 } from "@/redux/api/bookingApi";
 import { useAppSelector } from "@/redux/hooks";
 import { useRouter } from "next/navigation";

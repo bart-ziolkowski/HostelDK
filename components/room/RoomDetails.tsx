@@ -11,6 +11,7 @@ import NewReview from "../review/NewReview";
 import RoomFeatures from "./RoomFeatures";
 import RoomImageSlider from "./RoomImageSlider";
 import StarRatings from "react-star-ratings";
+
 import mapboxgl from "mapbox-gl/dist/mapbox-gl.js";
 
 interface Props {
@@ -19,7 +20,9 @@ interface Props {
   };
 }
 
-mapboxgl.accessToken = process.env.MAPBOX_ACCESS_TOKEN;
+
+mapboxgl.accessToken = `${process.env.MAPBOX_ACCESS_TOKEN}`;
+
 
 export const RoomDetails = ({ data }: Props) => {
   const { room } = data;
@@ -32,7 +35,7 @@ export const RoomDetails = ({ data }: Props) => {
         container: "room-map",
         style: "mapbox://styles/mapbox/streets-v11",
         center: coordinates,
-        zoom: 12,
+        zoom: 12
       });
 
       new mapboxgl.Marker().setLngLat(coordinates).addTo(map);
