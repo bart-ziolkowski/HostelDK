@@ -6,11 +6,10 @@ import React, { useEffect, useState } from "react";
 
 import DatePicker from "react-datepicker";
 import Loading from "@/app/admin/loading";
-import SalesChart from "../charts/SalesChart";
-import { SalesStats } from "./SalesStats";
+import { SalesChart } from "../charts/SalesChart";
+import SalesStats from "./SalesStats";
 import { TopPerformingChart } from "../charts/TopPerformingChart";
-import { getSalesStats } from "@/backend/controllers/bookingControllers";
-import toast from "react-hot-toast";
+import { toast } from "react-hot-toast";
 import { useLazyGetSalesStatsQuery } from "@/redux/api/bookingApi";
 
 const Dashboard = () => {
@@ -69,14 +68,12 @@ const Dashboard = () => {
           />
         </div>
 
-        <button
-          className="btn form-btn ms-4 mt-3 px-5"
-          onSubmit={submitHandler}
-        >
+        <button className="btn form-btn ms-4 mt-3 px-5" onClick={submitHandler}>
           Fetch
         </button>
       </div>
       <SalesStats data={data} />
+
       <div className="row">
         <div className="col-12 col-lg-8">
           <h4 className="my-5 text-center">Sales History</h4>
@@ -85,7 +82,7 @@ const Dashboard = () => {
 
         <div className="col-12 col-lg-4 text-center">
           <h4 className="my-5">Top Performing Rooms</h4>
-          {data?.topRooms.length > 0 ? (
+          {data?.topRooms?.length > 0 ? (
             <TopPerformingChart rooms={data?.topRooms} />
           ) : (
             <p className="mt-5">No data available</p>

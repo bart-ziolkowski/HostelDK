@@ -1,13 +1,12 @@
 "use client";
 
-import React, { useEffect } from "react";
-
 import { IBooking } from "@/backend/models/booking";
-import Link from "next/link";
-import { MDBDataTable } from "mdbreact";
-import toast from "react-hot-toast";
 import { useDeleteBookingMutation } from "@/redux/api/bookingApi";
+import { MDBDataTable } from "mdbreact";
+import Link from "next/link";
 import { useRouter } from "next/navigation";
+import React, { useEffect } from "react";
+import { toast } from "react-hot-toast";
 
 interface Props {
   data: {
@@ -15,7 +14,7 @@ interface Props {
   };
 }
 
-const AllBookings: React.FC<Props> = ({ data }) => {
+const AllBookings = ({ data }: Props) => {
   const bookings = data?.bookings;
 
   const router = useRouter();
@@ -47,6 +46,7 @@ const AllBookings: React.FC<Props> = ({ data }) => {
           field: "checkin",
           sort: "asc",
         },
+
         {
           label: "Actions",
           field: "actions",
@@ -57,20 +57,25 @@ const AllBookings: React.FC<Props> = ({ data }) => {
     };
 
     bookings?.forEach((booking) => {
-      data?.rows.push({
+      data?.rows?.push({
         id: booking._id,
-        checkin: new Date(booking?.checkInDate).toLocaleDateString("en-US"),
+        checkin: new Date(booking?.checkInDate).toLocaleString("en-US"),
 
         actions: (
           <>
-            <Link href={`/bookings/${booking._id}`} className="btn btn-outline-primary">
-              <i className="fa fa-eye"></i>
+            <Link
+              href={`/bookings/${booking._id}`}
+              className="btn btn-outline-primary"
+            >
+              {" "}
+              <i className="fa fa-eye"></i>{" "}
             </Link>
             <Link
               href={`/bookings/invoice/${booking._id}`}
               className="btn btn-outline-success ms-2"
             >
-              <i className="fa fa-receipt"></i>
+              {" "}
+              <i className="fa fa-receipt"></i>{" "}
             </Link>
             <button
               className="btn btn-outline-danger mx-2"

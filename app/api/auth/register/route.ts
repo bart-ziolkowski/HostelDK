@@ -1,4 +1,4 @@
-import { NextRequest } from "next/server";
+import { NextRequest, NextResponse } from "next/server";
 import { createEdgeRouter } from "next-connect";
 import dbConnect from "@/backend/config/dbConnect";
 import { registerUser } from "@/backend/controllers/authControllers";
@@ -11,6 +11,9 @@ dbConnect();
 
 router.post(registerUser);
 
-export async function POST(request: NextRequest, ctx: RequestContext) {
-  return router.run(request, ctx);
+export async function POST(
+  request: NextRequest,
+  ctx: RequestContext
+): Promise<NextResponse> {
+  return router.run(request, ctx) as Promise<NextResponse>;
 }

@@ -1,17 +1,16 @@
 "use client";
 
-import React, { useEffect, useState } from "react";
-
-import ButtonLoader from "../layout/ButtonLoader";
-import toast from "react-hot-toast";
 import { useResetPasswordMutation } from "@/redux/api/authApi";
 import { useRouter } from "next/navigation";
+import React, { useEffect, useState } from "react";
+import { toast } from "react-hot-toast";
+import ButtonLoader from "../layout/ButtonLoader";
 
 interface Props {
   token: string;
 }
 
-export const ResetPassword = ({ token }: Props) => {
+const ResetPassword = ({ token }: Props) => {
   const [password, setPassword] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
 
@@ -21,6 +20,8 @@ export const ResetPassword = ({ token }: Props) => {
     useResetPasswordMutation();
 
   useEffect(() => {
+    console.log(error);
+
     if (error && "data" in error) {
       toast.error(error?.data?.errMessage);
     }
@@ -40,7 +41,7 @@ export const ResetPassword = ({ token }: Props) => {
   };
 
   return (
-    <div className="row wrapper">
+    <div className="wrapper">
       <div className="col-10 col-lg-5">
         <form className="shadow rounded bg-body" onSubmit={submitHandler}>
           <h2 className="mb-4">New Password</h2>
@@ -86,3 +87,5 @@ export const ResetPassword = ({ token }: Props) => {
     </div>
   );
 };
+
+export default ResetPassword;

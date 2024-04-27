@@ -103,7 +103,7 @@ export const resetPassword = catchAsyncErrors(
       throw new ErrorHandler("Passwords does not match", 400);
     }
 
-    user.password = body.resetPassword;
+    user.password = body.password;
 
     user.resetPasswordToken = undefined;
     user.resetPasswordExpire = undefined;

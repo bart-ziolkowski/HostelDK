@@ -24,6 +24,7 @@ const NewReview = ({ roomId }: { roomId: string }) => {
     }
 
     if (isSuccess) {
+      console.log("szpak")
       revalidateTag("RoomDetails");
       toast.success("Review posted");
       router.refresh();

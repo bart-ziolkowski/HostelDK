@@ -48,7 +48,7 @@ const AdminSidebar = () => {
         <Link
           key={index}
           href={menuItem.url}
-          className={`fw - bold list-group-item list-group-item-action ${
+          className={`fw-bold list-group-item list-group-item-action ${
             activeMenuItem.includes(menuItem.url) ? "active" : ""
           }`}
           onClick={() => handleMenuItemClick(menuItem.url)}
