@@ -35,6 +35,5 @@ export function TopPerformingChart({ rooms }: Props) {
       },
     ],
   };
-
   return <Doughnut data={data} />;
 }

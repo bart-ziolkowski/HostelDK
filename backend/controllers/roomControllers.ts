@@ -84,7 +84,7 @@ export const updateRoom = catchAsyncErrors(
 
 export const uploadRoomImages = catchAsyncErrors(
   async (req: NextRequest, { params }: { params: { id: string } }) => {
-    const room = await Room.findById(params.id);
+    let room = await Room.findById(params.id);
     const body = await req.json();
 
     if (!room) {
@@ -96,9 +96,11 @@ export const uploadRoomImages = catchAsyncErrors(
 
     const urls = await Promise.all((body?.images).map(uploader));
 
-    room?.images?.push(...urls);
-
-    await room.save();
+    room = await Room.findByIdAndUpdate(
+      params.id,
+      { images: [...urls] },
+      { new: true }
+    );
 
     return NextResponse.json({
       success: true,
@@ -164,7 +166,7 @@ export const createRoomReview = catchAsyncErrors(async (req: NextRequest) => {
     comment,
   };
 
-  const room = await Room.findById(roomId);
+  let room = await Room.findById(roomId);
 
   const isReviewed = room?.reviews?.find(
     (r: IReview) => r.user?.toString() === req?.user?._id?.toString()
@@ -179,16 +181,22 @@ export const createRoomReview = catchAsyncErrors(async (req: NextRequest) => {
     });
   } else {
     room.reviews.push(review);
-    room.numOfReviews = room.reviews.length;
   }
 
-  room.ratings =
+  const reviews = room.reviews;
+  const numOfReviews = room.reviews.length;
+
+  const ratings =
     room?.reviews?.reduce(
       (acc: number, item: { rating: number }) => item.rating + acc,
       0
     ) / room?.reviews?.length;
 
-  await room.save();
+  await Room.findByIdAndUpdate(
+    roomId,
+    { ratings: ratings, numOfReviews: numOfReviews, reviews: reviews },
+    { new: true }
+  );
 
   return NextResponse.json({
     success: true,

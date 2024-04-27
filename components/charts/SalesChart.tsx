@@ -23,7 +23,7 @@ ChartJS.register(
 );
 
 interface SalesData {
-  monthName: String;
+  monthName: string;
   totalSales: number;
   numOfBookings: number;
 }
@@ -32,7 +32,7 @@ interface Props {
   salesData: SalesData[];
 }
 
-const SalesChart = ({ salesData }: Props) => {
+export function SalesChart({ salesData }: Props) {
   const options = {
     responsive: true,
     interaction: {
@@ -82,8 +82,6 @@ const SalesChart = ({ salesData }: Props) => {
       },
     ],
   };
-
+  console.log(data);
   return <Line options={options} data={data} />;
-};
-
-export default SalesChart;
+}

@@ -8,7 +8,7 @@ interface Props {
   };
 }
 
-export const SalesStats = ({ data }: Props) => {
+const SalesStats = ({ data }: Props) => {
   return (
     <div className="row my-5">
       <div className="col-12 col-lg-6">
@@ -54,3 +54,5 @@ export const SalesStats = ({ data }: Props) => {
     </div>
   );
 };
+
+export default SalesStats;

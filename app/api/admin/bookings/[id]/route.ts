@@ -3,25 +3,26 @@ import {
   isAuthenticatedUser,
 } from "@/backend/middlewares/auth";
 
-import { NextRequest } from "next/server";
+import { NextRequest, NextResponse } from "next/server";
 import { createEdgeRouter } from "next-connect";
 import dbConnect from "@/backend/config/dbConnect";
 import { deleteBooking } from "@/backend/controllers/bookingControllers";
 
 interface RequestContext {
-    params: {
-        id: string
-    }
+  params: {
+    id: string;
+  };
 }
 
 const router = createEdgeRouter<NextRequest, RequestContext>();
 
 dbConnect();
 
-router
-  .use(isAuthenticatedUser, authorizeRoles("admin"))
-  .delete(deleteBooking);
+router.use(isAuthenticatedUser, authorizeRoles("admin")).delete(deleteBooking);
 
-export async function DELETE(request: NextRequest, ctx: RequestContext) {
-  return router.run(request, ctx);
+export async function DELETE(
+  request: NextRequest,
+  ctx: RequestContext
+): Promise<NextResponse> {
+  return router.run(request, ctx) as Promise<NextResponse>;
 }

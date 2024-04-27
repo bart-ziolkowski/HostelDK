@@ -1,5 +1,4 @@
-import React from "react";
-import { ResetPassword } from "@/components/user/ResetPassword";
+import ResetPassword from "@/components/user/ResetPassword";
 
 export const metadata = {
   title: "Reset Password",

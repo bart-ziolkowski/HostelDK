@@ -34,10 +34,10 @@ const Login = () => {
     }
   };
   return (
-    <div className="row wrapper">
+    <div className="wrapper">
       <div className="col-10 col-lg-5">
         <form className="shadow rounded bg-body" onSubmit={submitHandler}>
-          <h1 className="mb-3">Login</h1>
+          <h1 className="mb-4">Login</h1>
           <div className="mb-3">
             <label className="form-label" htmlFor="email_field">
               {" "}

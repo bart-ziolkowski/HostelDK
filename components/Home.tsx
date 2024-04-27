@@ -29,12 +29,12 @@ const Home = ({ data }: Props) => {
             : "All Rooms"}
         </h2>
         <Link href="/search" className="ml-2 back-to-search">
-          <i className="fa fa-arrow-left me-1"></i> Back to Search
+          <i className="fa fa-search me-1"></i>Search Room
         </Link>
         <div className="row mt-4">
           {rooms?.length === 0 ? (
             <div className="alert alert-danger mt-5 w-100">
-              <b>No Rooms.</b>
+              <b>No Rooms</b>
             </div>
           ) : (
             rooms?.map((room) => <RoomItem key={room._id} room={room} />)

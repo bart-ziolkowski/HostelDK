@@ -44,7 +44,7 @@ const AllUsers = ({ data }: Props) => {
         },
         {
           label: "Name",
-          field: "checkin",
+          field: "name",
           sort: "asc",
         },
         {
