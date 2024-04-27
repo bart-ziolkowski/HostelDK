@@ -1,7 +1,7 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   env: {
-    API_URL: "https://hosteldk-hiiinewzh-bartziolkowskis-projects.vercel.app",
+    API_URL: "https://hosteldk-ancymhund-bartziolkowskis-projects.vercel.app",
     SMTP_PASSWORD: "0516fde7a867e3",
     SMTP_PORT: 2525,
     MAPBOX_ACCESS_TOKEN:
@@ -13,7 +13,7 @@ const nextConfig = {
     SMTP_HOST: "sandbox.smtp.mailtrap.io",
     CLOUDINARY_API_SECRET: "GLsXhOLw6hkmAkBaUG-JTI3-ne8",
     NEXTAUTH_URL:
-      "https://hosteldk-hiiinewzh-bartziolkowskis-projects.vercel.app",
+      "https://hosteldk-ancymhund-bartziolkowskis-projects.vercel.app",
   },
   images: {
     remotePatterns: [
