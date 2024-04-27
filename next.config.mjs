@@ -8,7 +8,7 @@ const nextConfig = {
       "pk.eyJ1IjoiYmFydC16aW9sa293c2tpIiwiYSI6ImNsdjlpbWJ5eTBoNGoyaXA4MGNwbW9xeDEifQ.Ag5FV6LEfCsYptZOdZQJrA",
     CLOUDINARY_API_KEY: 177238823964242,
     DB_URI:
-      "mongodb+srv://bart-ziolkowski:Meybiksong2016@@hosteldk.pftwzmb.mongodb.net/hosteldk?retryWrites=true&w=majority&appName=hosteldk",
+      "mongodb+srv://vercel-admin-user:pNJT8inUdHj3uoeM@hosteldk.pftwzmb.mongodb.net/hosteldk?retryWrites=true&w=majority",
     SMTP_FROM_EMAIL: "noreply@hosteldk.dk",
     SMTP_HOST: "sandbox.smtp.mailtrap.io",
     CLOUDINARY_API_SECRET: "GLsXhOLw6hkmAkBaUG-JTI3-ne8",
