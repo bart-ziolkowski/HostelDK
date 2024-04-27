@@ -103,10 +103,14 @@ const BookingDetails = ({ data }: Props) => {
               <div className="row my-5">
                 <div className="col-4 col-lg-2">
                   <Image
-                    src={booking?.room?.images?.[0]?.url || "/images/default_room_image.jpg"}
+                    src={
+                      booking?.room?.images?.[0]?.url ||
+                      "/images/default_room_image.jpg"
+                    }
                     alt={booking?.room?.name}
-                    height="45"
-                    width="65"
+                    height={45}
+                    width={65}
+                    unoptimized={true}
                   />
                 </div>
 

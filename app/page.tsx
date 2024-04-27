@@ -2,24 +2,17 @@ import Error from "./error";
 import Home from "@/components/Home";
 
 export const metadata = {
-  title: "Home - HotelDK",
+  title: "Home - HostelDK",
 };
 
 const fetchRooms = async (searchParams: string) => {
   const urlParams = new URLSearchParams(searchParams);
   const queryString = urlParams.toString();
 
-  try {
-    const res = await fetch(`${process.env.API_URL}/api/rooms?${queryString}`, {
-      cache: "no-cache",
-    });
-    const data = await res.json();
-    return data;
-  } catch (error) {
-    console.log(error);
-  }
+  const res = await fetch(`${process.env.API_URL}/api/rooms?${queryString}`, {
+      cache: "no-cache"})
 
-  ///return res.json();
+  return res.json();
 };
 
 export default async function HomePage({

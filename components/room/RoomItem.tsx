@@ -24,6 +24,7 @@ const RoomItem = ({ room }: Props) => {
           alt={room?.name}
           height={170}
           width={100}
+          unoptimized={true}
         />
         <div className="card-body d-flex flex-column">
           <h5 className="card-title">

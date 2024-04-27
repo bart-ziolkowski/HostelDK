@@ -82,6 +82,5 @@ export function SalesChart({ salesData }: Props) {
       },
     ],
   };
-  console.log(data);
   return <Line options={options} data={data} />;
 }

@@ -19,6 +19,7 @@ const RoomImageSlider = ({ images }: Props) => {
                 src={image?.url}
                 alt={image?.url}
                 layout="fill"
+                unoptimized={true}
               />
             </div>
           </Carousel.Item>
@@ -31,6 +32,7 @@ const RoomImageSlider = ({ images }: Props) => {
               src={"/images/default_room_image.jpg"}
               alt={"/images/default_room_image.jpg"}
               layout="fill"
+              unoptimized={true}
             />
           </div>
         </Carousel.Item>

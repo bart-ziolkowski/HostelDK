@@ -11,7 +11,6 @@ import NewReview from "../review/NewReview";
 import RoomFeatures from "./RoomFeatures";
 import RoomImageSlider from "./RoomImageSlider";
 import StarRatings from "react-star-ratings";
-
 import mapboxgl from "mapbox-gl/dist/mapbox-gl.js";
 
 interface Props {
@@ -20,9 +19,7 @@ interface Props {
   };
 }
 
-
 mapboxgl.accessToken = `${process.env.MAPBOX_ACCESS_TOKEN}`;
-
 
 export const RoomDetails = ({ data }: Props) => {
   const { room } = data;
