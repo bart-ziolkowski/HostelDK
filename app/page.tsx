@@ -8,10 +8,18 @@ export const metadata = {
 const fetchRooms = async (searchParams: string) => {
   const urlParams = new URLSearchParams(searchParams);
   const queryString = urlParams.toString();
+
+  try {
     const res = await fetch(`${process.env.API_URL}/api/rooms?${queryString}`, {
       cache: "no-cache",
     });
-  return res.json();
+    const data = await res.json();
+    return data;
+  } catch (error) {
+    console.log(error);
+  }
+
+  ///return res.json();
 };
 
 export default async function HomePage({
