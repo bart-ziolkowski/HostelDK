@@ -1,20 +1,6 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  env: {
-    API_URL: "https://hosteldk-ancymhund-bartziolkowskis-projects.vercel.app",
-    SMTP_PASSWORD: "0516fde7a867e3",
-    SMTP_PORT: 2525,
-    MAPBOX_ACCESS_TOKEN:
-      "pk.eyJ1IjoiYmFydC16aW9sa293c2tpIiwiYSI6ImNsdjlpbWJ5eTBoNGoyaXA4MGNwbW9xeDEifQ.Ag5FV6LEfCsYptZOdZQJrA",
-    CLOUDINARY_API_KEY: 177238823964242,
-    DB_URI:
-      "mongodb+srv://bart-ziolkowski:Meybiksong2016@@hosteldk.pftwzmb.mongodb.net/hosteldk?retryWrites=true&w=majority&appName=hosteldk",
-    SMTP_FROM_EMAIL: "noreply@hosteldk.dk",
-    SMTP_HOST: "sandbox.smtp.mailtrap.io",
-    CLOUDINARY_API_SECRET: "GLsXhOLw6hkmAkBaUG-JTI3-ne8",
-    NEXTAUTH_URL:
-      "https://hosteldk-ancymhund-bartziolkowskis-projects.vercel.app",
-  },
+  env: {},
   images: {
     remotePatterns: [
       {
