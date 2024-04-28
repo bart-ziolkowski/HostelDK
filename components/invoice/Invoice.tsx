@@ -54,7 +54,7 @@ const Invoice = ({ data }: Props) => {
                 </div>
                 <div>+45 1234 5678</div>
                 <div>
-                  <a href="mailto:info@bookit.com">info@hosteldk.dk</a>
+                  <a href="mailto:info@hosteldk.dk">info@hosteldk.dk</a>
                 </div>
               </div>
               <div id="project">

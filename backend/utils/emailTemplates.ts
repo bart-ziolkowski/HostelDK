@@ -453,7 +453,7 @@ export const resetPasswordHTMLTemplate = (
                   href="https://hosteldk.dk"
                   class="f-fallback email-masthead_name"
                 >
-                  BookIT
+                  HostelDK
                 </a>
               </td>
             </tr>

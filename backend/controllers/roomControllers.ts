@@ -92,7 +92,7 @@ export const uploadRoomImages = catchAsyncErrors(
     }
 
     const uploader = async (image: string) =>
-      upload_file(image, "bookit/rooms");
+      upload_file(image, "hosteldk/rooms");
 
     const urls = await Promise.all((body?.images).map(uploader));
 
