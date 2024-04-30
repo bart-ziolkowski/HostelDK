@@ -15,11 +15,10 @@ export default function Error({
     <div>
       <div className="d-flex justify-content-center align-items-center vh-100">
         <div className="text-center">
-          <h2 className="display-4 fw-bold">{error?.errMessage}</h2>
-          <p className="fs-3">
+          <h2 className="display-4 fw-bold">
             <span className="text-danger">Opps!</span> Something went wrong!
-          </p>
-          <p className="lead">Sorry for inconvience</p>
+          </h2>
+          <p className="fs-3">Sorry for the Inconvenience</p>
           <button className="btn btn-primary" onClick={() => reset?.()}>
             Try again
           </button>
