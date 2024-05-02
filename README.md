@@ -4,20 +4,6 @@ This is a concept application designed for booking accommodation in a selected h
 
 <a href="https://hosteldk.vercel.app/" target="_blank">Click here to open live demo</a>
 
-## Table of Contents
-
-- [General Info](/#general-information)
-- [Technologies Used](#technologies-used)
-- [Features](#features)
-- [Screenshots](#screenshots)
-- [Local Setup](#local-setup)
-- [Project Status](#project-status)
-- [Future Work](#future-work)
-
-## General Information
-
-- TO-DO
-
 ## Technologies Used
 
 - Languages and Frameworks
@@ -44,12 +30,9 @@ This is a concept application designed for booking accommodation in a selected h
 
 ## Features
 
-- TO-DO
-
-## Screenshots
-
-|      ![Home Page](https://res.cloudinary.com/dv7nhvy8e/image/upload/v1714313153/kgtxpk2k5iuu594r5xw3.jpg)            |
-| :------------------------------------------------------------: |
-|                     _Home Page_                      |
-|      ![Top of Room Details](https://res.cloudinary.com/dv7nhvy8e/image/upload/v1714313154/bwvmiskv9nrbltb5cpxq.png)       |
-|                     _Top of Room Details_                      |
+- user authentication
+- integration with a Stripe payment gateway
+- admin dashboard with statistics
+- pagination, filtering, search bar
+- user account with hostel bookings
+- integrated date picker and preview of a given hostel's location
